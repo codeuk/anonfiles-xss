@@ -1,3 +1,5 @@
+**RELEASING CODE SOON!!**
+
 # AnonFiles XSS Generator 🕷️
 **Custom dashboard for generating a malicious AnonFiles XSS download link!**
 - You can spoof the file name & extension (so no one thinks it can be malicious)
