@@ -1,4 +1,4 @@
-**RELEASING CODE AT 10 STARS**
+**CODE HAS BEEN RELEASED! Please let me know if you have any issues and leave a star :)**
 
 # AnonFiles XSS Generator 🕷️
 **Custom dashboard for generating a malicious AnonFiles XSS download link!**
