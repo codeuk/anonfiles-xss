@@ -38,38 +38,6 @@
         </div>
     </form>
 
-    <!-- <div id="listings" style="padding-left: 100px; padding-right: 100px; padding-top: 30px; padding-bottom: 80px;">
-        <table class="table" id="table_to_sort">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Product Name</th>
-                    <th scope="col">Product Price</th>
-                    <th scope="col">Manage</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for i, product in sorted %}
-                <tr>
-                    <th scope="row">{{i+1}}</th>
-
-                    <form method="POST" action="{{url_for('edit_product_name', name=product.name)}}" id="editnameinput">
-                        <td><input style="width: 200px;" type="text" class="form-control" name="new_name" value={{product.name}} autocomplete="off"></td>
-                    </form>
-
-                    <td>£{{product.price|round(2)}}</td>
-                    <td>
-                        <form action="{{ url_for('remove_product', name=product.name) }}" method="POST" id="delete-form">
-                            <button class="btn btn-danger" id="deleteproduct" type="submit">Delete</button>
-                            <button class="btn btn-primary" form="editnameinput" type="submit">Edit</button>
-                        </form>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div> -->
-
 </body>
 
 </html>
